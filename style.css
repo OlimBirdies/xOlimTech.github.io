@@ -1,0 +1,202 @@
+/* Fil rouge: selecteur, dimensions, couleur */
+/* Texte */
+/* Background */
+/* Boxes */
+/* positioning */
+/* flex */
+/* Grid */
+/* pseudo classe */
+/* Débug */
+/* Responsive */
+
+/*2 façons d'intégrer des polices a son projet..*/
+
+/*URL pour importer une police à sa page (si le serveur hébergeant la police est down
+possibilité d'importer directement une police au projet dans le dossier "assets"*/
+
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@500&display=swap');
+
+/*Manière plus "pro" d'intégrer une police via le dossier assets avec "font-face": */
+
+@font-face {
+    font-family: "font-1"; /*pour plus de simplicité dans de futures modifications de code 
+    on nomme les polices par des numéros lié au fichier de la police*/
+    src: url(./assets/RobotoFlex-Regular.ttf);
+}
+
+/*Dans une feuile de style on appelle la balise que l'on souhaite styliser par son nom
+puis on lui applique les fonctions souhaitées*/
+
+
+/*Pour étudier plus facilement le style CSS d un site on peut marquer tous les éléments en rouge
+* {
+    border: 2px red solid;
+} */
+
+body {
+    color: aliceblue;
+    font-family: "font-1", sans-serif;
+    background: url(./assets/pexels-wendy-wei-1677710.jpg) no-repeat fixed center/cover;
+    height: 100vh; /*100vh veut dire 100% de l'écran utilisateur*/
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.945);
+    text-shadow: 5px -2.5px 0 #5900ff6e;
+    text-align: center;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+main {
+    background: rgb(2, 93, 129);
+    opacity: 99%;
+    /*on écrit souvent les largeur en % et les hauteurs en pixel dû au différentes tailles d'écran*/
+    width: 80%;
+    min-height: 250px;
+    margin: 0 auto;/*haut droite bas gauche quand 4 valeur. Haut/bas gauche/droite quand 2 valeurs*/
+    padding: 10px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 blue;
+}
+
+.positioning, 
+.flexbox,
+.grid {
+    border: 2px solid skyblue;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/********** Positioning **********/
+
+.positioning {
+    position: relative;
+}
+
+h2 {
+    margin: 0;
+}
+
+#circle {
+    height: 45px;
+    width: 45px;
+    background: skyblue;
+    padding: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    right: 110px;
+    box-shadow: 0 0px 15px 5px whitesmoke;
+    z-index: 1; /* ordre des "calques"*/
+}
+
+#rectangle {
+    height: 15px;
+    width: 100px;
+    background: slateblue;
+    padding: 20px;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    border-radius: 5px;
+}
+
+/************** FlexBox ****************/
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    font-size: 0.7rem;
+    height: 160px;
+    width: 160px;
+    background: rgb(2, 120, 167);
+    /*centrer verticalement et horizontazlement*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    border-style: solid;
+}
+
+/******************** GRID ******************/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 20px;
+}
+
+.img {
+    text-align: center;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "i1 i2"
+        "ta ta"
+        "bt bt";
+}
+
+input, textarea {
+    margin: 5px;
+    height: 45px;
+    border: 1px whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: "font-1";
+}
+
+#firstname {
+    grid-area: i1;
+}
+#surname {
+    grid-area: i2;
+}
+textarea {
+    grid-area: ta;
+    resize: none;
+}
+input[type="submit"] {
+    grid-area: bt;
+    cursor: pointer;
+    transition: 0.33s;
+}
+
+input[type="submit"]:hover {
+    background: rgb(9, 124, 190);
+    color: aliceblue;
+}
+
+/************* Responsive ***************/
+
+@media screen and (max-width: 1000px) {
+    .grid-container {
+        display: block;
+    }
+}
+@media screen and (max-width: 780px) {
+    form {
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "i1"
+            "i2"
+            "ta"
+            "bt";
+    }
+}

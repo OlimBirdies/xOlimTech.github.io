@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours CSS</title>
+    <!--pour relier la feuille css il faut donnerla relation "rel" et l'url "href" intégré au HEAD-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Désoeuvrés d'Arts</h1>
+    </header>
+
+    <main>
+        <div class="positioning">
+            <h2>Positioning</h2>
+            <span>relative</span>
+            <span id="circle">absolute</span>
+            <span id="rectangle">absolute</span>
+        </div>
+
+        <div class="flexbox">
+            <h2>Flexbox</h2>
+            <ul>
+                <li>
+                    <a href="https://flexbox.help/" target="_blank">FLEXBOX HELP</a></li>
+                <li>
+                    <a href="https://www.reveillere.fr/M2WEB/sheets/css.pdf" target="_blank">REVEILLERE.FR</a></li>
+                <li>
+                    <a href="https://cssgenerator.org/" target="_blank">CSS Generator</a></li>
+            </ul>
+        </div>
+
+        <div class="grid">
+            <h2>Grid</h2>
+            <div class="grid-container">
+                <div class="img">
+                    <img src="./assets/CSS3_logo_and_wordmark.svg.png" height="150" alt="logo">
+                </div>
+                <form>
+                    <input type="text" id="firstname" placeholder="Prénom">
+                    <input type="text" id="surname" placeholder="Nom">
+                    <textarea cols="30" rows="30" placeholder="Ici votre message"></textarea>
+                    <input type="submit" value="Valider">
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+</html>
